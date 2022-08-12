@@ -12,7 +12,7 @@ import static org.testng.Assert.assertTrue;
 public class RetrievePasswordTest extends BaseTests {
 
     @Test
-            public void testRetrievePassword(){
+    public void testRetrievePassword(){
         var forgotPasswordPage
                 = homePage.clickForgotPassword();
         forgotPasswordPage.setEmail("smilech@op.pl");
