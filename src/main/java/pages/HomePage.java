@@ -44,4 +44,9 @@ public class HomePage {
         clickLink("Horizontal Slider");
         return new HorizontalSliderPage(driver);
     }
+
+    public AlertsPage clickJavaScriptAlerts(){
+        clickLink("JavaScript Alerts");
+        return new AlertsPage(driver);
+    }
 }
