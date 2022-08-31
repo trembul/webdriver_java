@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class ContextMenuPage {
@@ -11,11 +10,19 @@ public class ContextMenuPage {
     public ContextMenuPage(WebDriver driver){
         this.driver = driver;
     }
-    public By boxField = By.id("hot-spot");
+    public By box = By.id("hot-spot");
 
 
-    public void clickContextMenu(){
+    public void rightClickInBox(){
         Actions actions = new Actions(driver);
-        actions.contextClick(driver.findElement(boxField)).perform();
+        actions.contextClick(driver.findElement(box)).perform();
+    }
+
+    public String getPopUpText(){
+        return driver.switchTo().alert().getText();
+    }
+
+    public void acceptPopUp(){
+        driver.switchTo().alert().accept();
     }
 }
