@@ -21,9 +21,9 @@ public class HomePage {
         return new DropdownPage(driver);
     }
 
-    public ForgotPasswordPage clickForgotPasswordLink(){
-        clickLink("Forgot Password");
-        return new ForgotPasswordPage(driver);
+    public HoversPage clickHoversPageLink(){
+        clickLink("Hovers");
+        return new HoversPage(driver);
     }
 
     public void clickLink(String linkText){
