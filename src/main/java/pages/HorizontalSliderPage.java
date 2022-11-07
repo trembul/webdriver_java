@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class HorizontalSliderPage {
@@ -13,11 +14,13 @@ public class HorizontalSliderPage {
         this.driver = driver;
     }
 
-    public void moveSlider(String text){
-        driver.findElement(horizontalSlider).sendKeys(text);
+    public void moveSlider(String value){
+        while(!getSliderValue().equals(value)) {
+            driver.findElement(horizontalSlider).sendKeys(Keys.ARROW_RIGHT);
+        }
     }
 
-    public void getSliderValue(){
-        driver.findElement(sliderValue).getText();
+    public String getSliderValue(){
+        return driver.findElement(sliderValue).getText();
     }
 }
