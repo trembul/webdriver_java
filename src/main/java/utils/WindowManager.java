@@ -2,6 +2,8 @@ package utils;
 
 import org.openqa.selenium.WebDriver;
 
+import java.util.ArrayList;
+
 public class WindowManager {
 
     private WebDriver driver;
@@ -45,6 +47,17 @@ public class WindowManager {
                 break;
             }
         }
+    }
+
+    public void switchToNewTab(){
+        //Get the current window handle
+        String windowHandle = driver.getWindowHandle();
+
+//Get the list of window handles
+        ArrayList tabs = new ArrayList (driver.getWindowHandles());
+        System.out.println(tabs.size());
+//Use the list of window handles to switch between windows
+        driver.switchTo().window((String) tabs.get(1));
     }
 
 

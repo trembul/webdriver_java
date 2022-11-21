@@ -1,7 +1,11 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+
+import static org.openqa.selenium.Keys.*;
+import static org.openqa.selenium.Keys.ALT;
 
 public class DynamicLoadingPage {
 
@@ -21,6 +25,11 @@ public class DynamicLoadingPage {
 
     public DynamicLoadingExample2Page clickExample2Link(){
         driver.findElement(link_Example2).click();
+        return new DynamicLoadingExample2Page(driver);
+    }
+
+    public DynamicLoadingExample2Page openExample2InNewTab(){
+        driver.findElement(link_Example2).sendKeys(CONTROL, SHIFT, ENTER);
         return new DynamicLoadingExample2Page(driver);
     }
 
